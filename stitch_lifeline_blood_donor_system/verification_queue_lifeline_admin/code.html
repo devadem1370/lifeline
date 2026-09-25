@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@100..900&family=Bricolage+Grotesque:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed": "#9ff2e2", "on-primary": "#ffffff", "on-tertiary-fixed": "#001c39", "on-primary-fixed-variant": "#8f0c28", "background": "#f9f9ff", "on-tertiary": "#ffffff", "primary-fixed-dim": "#ffb3b5", "tertiary": "#003c6e", "on-surface": "#141c29", "surface-dim": "#d2daec", "surface-container-high": "#e0e8fa", "secondary": "#006b5e", "on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#004883", "surface-container": "#e7eeff", "surface": "#f9f9ff", "on-surface-variant": "#594141", "tertiary-fixed-dim": "#a3c9ff", "on-primary-fixed": "#40000c", "on-error-container": "#93000a", "surface-tint": "#b02a3e", "outline": "#8c7071", "surface-container-highest": "#dbe3f5", "outline-variant": "#e0bfbf", "primary-fixed": "#ffdada", "on-error": "#ffffff", "secondary-fixed-dim": "#83d5c6", "error-container": "#ffdad6", "primary-container": "#9e1b32", "surface-variant": "#dbe3f5", "secondary-container": "#9cefdf", "tertiary-fixed": "#d3e3ff", "surface-container-low": "#f0f3ff", "inverse-on-surface": "#ebf1ff", "tertiary-container": "#005395", "inverse-surface": "#29313e", "error": "#ba1a1a", "inverse-primary": "#ffb3b5", "on-secondary-container": "#0a6f62", "on-primary-container": "#ffb0b3", "primary": "#7b001f", "on-secondary-fixed": "#00201b", "on-secondary-fixed-variant": "#005047", "surface-bright": "#f9f9ff", "on-tertiary-container": "#a1c7ff", "surface-container-lowest": "#ffffff", "on-background": "#141c29" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-xl": "2.5rem", "space-md": "1rem", "gutter-md": "1.5rem", "gutter": "1rem", "margin-md": "1.5rem", "margin": "1rem", "space-lg": "1.5rem", "margin-lg": "3rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter-lg": "2rem" }, "fontFamily": { "body-sm": ["Atkinson Hyperlegible Next"], "body-lg": ["Atkinson Hyperlegible Next"], "title": ["Bricolage Grotesque"], "body-base": ["Atkinson Hyperlegible Next"], "display-mobile": ["Bricolage Grotesque"], "caption": ["Atkinson Hyperlegible Next"], "headline-md": ["Bricolage Grotesque"], "body-sm-bold": ["Atkinson Hyperlegible Next"], "display": ["Bricolage Grotesque"], "body-bold": ["Atkinson Hyperlegible Next"], "headline-lg": ["Bricolage Grotesque"], "headline-lg-mobile": ["Bricolage Grotesque"], "tag": ["Bricolage Grotesque"] }, "fontSize": { "body-sm": ["0.875rem", { "lineHeight": "1.4", "fontWeight": "400" }], "body-lg": ["1.125rem", { "lineHeight": "1.5", "fontWeight": "400" }], "title": ["1.125rem", { "lineHeight": "1.4", "fontWeight": "600" }], "body-base": ["1rem", { "lineHeight": "1.5", "fontWeight": "400" }], "display-mobile": ["2rem", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }], "caption": ["0.75rem", { "lineHeight": "1.35", "fontWeight": "400" }], "headline-md": ["1.375rem", { "lineHeight": "1.35", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm-bold": ["0.875rem", { "lineHeight": "1.4", "fontWeight": "700" }], "display": ["2.75rem", { "lineHeight": "1.15", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-bold": ["1rem", { "lineHeight": "1.5", "fontWeight": "700" }], "headline-lg": ["2rem", { "lineHeight": "1.25", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["1.625rem", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700" }], "tag": ["0.875rem", { "lineHeight": "1", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-base text-body-base text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest border-b border-surface-dim z-50"><div class="w-full h-full px-gutter-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">vital_signs</span></div><span class="font-title text-title text-on-surface font-bold tracking-tight">Lifeline</span></div><div class="h-4 w-px bg-surface-dim mx-space-xs"></div><span class="px-space-sm py-space-xs bg-surface-container-high text-on-surface font-tag text-tag rounded-none uppercase tracking-wider text-[11px]">Admin portal</span></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm text-on-surface-variant"><span class="material-symbols-outlined text-[18px] text-secondary">format_image_left</span><span class="font-caption text-caption text-on-surface-variant">Clinical dispatch node #04</span></div><div class="h-4 w-px bg-surface-dim"></div><div class="flex items-center gap-space-sm"><div class="flex flex-col text-right"><span class="font-body-sm-bold text-body-sm-bold text-on-surface leading-tight">Dr. Sarah Chen</span><span class="font-caption text-caption text-on-surface-variant leading-tight">Duty director</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest border-r border-surface-dim z-40 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="px-gutter py-space-md border-b border-surface-dim"><span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block">Clinical operations</span></div><nav class="flex flex-col py-space-xs" data-active-classes="bg-surface-container-low text-primary border-l-2 border-primary font-body-bold text-body-bold"><a aria-current="page" class="flex items-center justify-between px-gutter py-space-sm transition-colors bg-surface-container-low text-primary border-l-2 border-primary font-body-bold text-body-bold" data-path="verification-queue" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Verification queue</span></div><span class="px-space-xs py-0.5 bg-primary-container text-on-primary font-caption text-caption font-bold rounded-none">14</span></a><a class="flex items-center justify-between px-gutter py-space-sm font-body-base text-body-base text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors border-l-2 border-transparent" data-path="requests" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">emergency</span><span>Requests</span></div><span class="px-space-xs py-0.5 bg-surface-container-high text-on-surface font-caption text-caption font-semibold rounded-none">6</span></a><a class="flex items-center justify-between px-gutter py-space-sm font-body-base text-body-base text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors border-l-2 border-transparent" data-path="reported-content" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">flag</span><span>Reported content</span></div></a><a class="flex items-center justify-between px-gutter py-space-sm font-body-base text-body-base text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors border-l-2 border-transparent" data-path="users" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">group</span><span>Users</span></div></a></nav></div><div class="p-gutter border-t border-surface-dim bg-surface-container-lowest"><div class="flex items-center justify-between"><div class="flex flex-col"><span class="font-caption text-caption text-on-surface-variant">System status</span><span class="font-body-sm-bold text-body-sm-bold text-secondary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span>Operational</span></div><span class="font-caption text-caption text-on-surface-variant">v2.4.1</span></div></div></aside><div class="pl-64"><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Meta Strip -->
+<div class="w-full bg-surface-container-low px-gutter-lg py-space-xs border-b border-surface-dim flex items-center justify-between">
+<div class="flex items-center gap-space-sm text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-secondary">schedule</span>
+<span>Average review time this week: 19 hours.</span>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-caption text-caption">
+<span>Operational SLA target: under 24 hours</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-secondary font-body-sm-bold">Compliance 98.4%</span>
+</div>
+</div>
+<!-- Main View Area (Header + Split Panes) -->
+<div class="p-gutter-lg flex flex-col gap-space-md max-w-[1440px] mx-auto w-full">
+<!-- Action Bar & Queue Heading -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-sm border-b border-surface-dim">
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Verification queue</h1>
+<span class="px-space-sm py-0.5 bg-primary-container text-on-primary font-caption text-caption font-bold rounded-none">6 pending</span>
+</div>
+<p class="font-body-base text-body-base text-on-surface-variant">Review official institutional registration, facility licenses, and blood transfusion authority proofs.</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full h-10 pl-9 pr-3 bg-surface-container-lowest border border-surface-dim text-on-surface font-body-base text-body-sm focus:border-on-surface focus:outline-none placeholder:text-on-surface-variant" placeholder="Search hospital or applicant" type="text"/>
+</div>
+<div class="relative">
+<select class="h-10 px-space-md pr-8 bg-surface-container-lowest border border-surface-dim text-on-surface font-body-base text-body-sm appearance-none focus:border-on-surface focus:outline-none">
+<option>All submission dates</option>
+<option>Today</option>
+<option>Last 48 hours</option>
+<option>Older than 3 days</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Split Pane Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 border border-surface-dim bg-surface-container-lowest min-h-[820px]">
+<!-- LEFT PANE: Applications List (approx 45% -> 5 cols / 12) -->
+<section class="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-surface-dim flex flex-col bg-surface-container-lowest">
+<!-- Pane Subheader -->
+<div class="px-gutter py-space-sm bg-surface-container-low border-b border-surface-dim flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-title text-title text-on-surface font-semibold">Pending verifications</span>
+<span class="font-caption text-caption text-on-surface-variant">(6)</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Sort by: Oldest first</span>
+</div>
+<!-- Table Columns Header -->
+<div class="grid grid-cols-12 px-gutter py-space-xs bg-surface-container-high border-b border-surface-dim text-on-surface-variant font-caption text-caption uppercase tracking-wider">
+<div class="col-span-6">Hospital & applicant</div>
+<div class="col-span-3">Submitted</div>
+<div class="col-span-3 text-right">Status</div>
+</div>
+<!-- Queue Rows -->
+<div class="flex flex-col divide-y divide-surface-dim overflow-y-auto">
+<!-- Row 1: Selected (St. Jude Trauma Center) -->
+<article aria-current="true" class="grid grid-cols-12 px-gutter py-space-md bg-surface-container-highest cursor-pointer relative">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<div class="col-span-6 pr-space-xs flex flex-col justify-center">
+<div class="flex items-center gap-1.5">
+<span class="font-body-bold text-body-base text-on-surface">St. Jude Trauma Center</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant truncate">Emergency & Critical Care Wing</span>
+<div class="mt-1 flex items-center gap-1 text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span>Dr. Elena Rostova</span>
+</div>
+</div>
+<div class="col-span-3 flex flex-col justify-center text-on-surface-variant font-caption text-caption">
+<span class="text-on-surface font-body-sm-bold">Today</span>
+<span>9:20 am</span>
+<span class="mt-1 text-[11px] text-on-surface-variant">2 files</span>
+</div>
+<div class="col-span-3 flex flex-col items-end justify-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-secondary-container text-on-secondary-container font-caption text-caption font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Under review
+              </span>
+</div>
+</article>
+<!-- Row 2: Mercy Red Cross Clinic -->
+<article class="grid grid-cols-12 px-gutter py-space-md hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="col-span-6 pr-space-xs flex flex-col justify-center">
+<span class="font-body-bold text-body-base text-on-surface">Mercy Red Cross Clinic</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">North Riverside Road</span>
+<div class="mt-1 flex items-center gap-1 text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span>Marcus Vance</span>
+</div>
+</div>
+<div class="col-span-3 flex flex-col justify-center text-on-surface-variant font-caption text-caption">
+<span class="text-on-surface">Yesterday</span>
+<span>4:15 pm</span>
+<span class="mt-1 text-[11px] text-on-surface-variant">1 file</span>
+</div>
+<div class="col-span-3 flex flex-col items-end justify-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-surface-container-high text-on-surface font-caption text-caption">
+                Awaiting review
+              </span>
+</div>
+</article>
+<!-- Row 3: Metropolitan Children's Hospital -->
+<article class="grid grid-cols-12 px-gutter py-space-md hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="col-span-6 pr-space-xs flex flex-col justify-center">
+<span class="font-body-bold text-body-base text-on-surface">Metropolitan Children's Hospital</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">Pediatric Wing B</span>
+<div class="mt-1 flex items-center gap-1 text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span>Amina Al-Mansoor</span>
+</div>
+</div>
+<div class="col-span-3 flex flex-col justify-center text-on-surface-variant font-caption text-caption">
+<span class="text-on-surface">Yesterday</span>
+<span>11:30 am</span>
+<span class="mt-1 text-[11px] text-on-surface-variant">1 file</span>
+</div>
+<div class="col-span-3 flex flex-col items-end justify-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-surface-container-high text-on-surface font-caption text-caption">
+                Awaiting review
+              </span>
+</div>
+</article>
+<!-- Row 4: Beacon Hill Community Hospital -->
+<article class="grid grid-cols-12 px-gutter py-space-md hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="col-span-6 pr-space-xs flex flex-col justify-center">
+<span class="font-body-bold text-body-base text-on-surface">Beacon Hill Community Hospital</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">South Annex</span>
+<div class="mt-1 flex items-center gap-1 text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span>Julian Chen</span>
+</div>
+</div>
+<div class="col-span-3 flex flex-col justify-center text-on-surface-variant font-caption text-caption">
+<span class="text-on-surface">22 Sep 2026</span>
+<span>2:05 pm</span>
+<span class="mt-1 text-[11px] text-on-surface-variant">3 files</span>
+</div>
+<div class="col-span-3 flex flex-col items-end justify-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-surface-container-high text-on-surface font-caption text-caption">
+                Awaiting review
+              </span>
+</div>
+</article>
+<!-- Row 5: Oakridge General Infirmary -->
+<article class="grid grid-cols-12 px-gutter py-space-md hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="col-span-6 pr-space-xs flex flex-col justify-center">
+<span class="font-body-bold text-body-base text-on-surface">Oakridge General Infirmary</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">Outpatient Ward</span>
+<div class="mt-1 flex items-center gap-1 text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span>Sarah Jenkins</span>
+</div>
+</div>
+<div class="col-span-3 flex flex-col justify-center text-on-surface-variant font-caption text-caption">
+<span class="text-on-surface">21 Sep 2026</span>
+<span>10:40 am</span>
+<span class="mt-1 text-[11px] text-on-surface-variant">1 file</span>
+</div>
+<div class="col-span-3 flex flex-col items-end justify-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-primary-fixed text-on-primary-fixed font-caption text-caption font-semibold">
+                More info requested
+              </span>
+</div>
+</article>
+<!-- Row 6: West Valley Trauma Unit -->
+<article class="grid grid-cols-12 px-gutter py-space-md hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="col-span-6 pr-space-xs flex flex-col justify-center">
+<span class="font-body-bold text-body-base text-on-surface">West Valley Trauma Unit</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">District 4</span>
+<div class="mt-1 flex items-center gap-1 text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span>Farhan Siddiqui</span>
+</div>
+</div>
+<div class="col-span-3 flex flex-col justify-center text-on-surface-variant font-caption text-caption">
+<span class="text-on-surface">20 Sep 2026</span>
+<span>5:50 pm</span>
+<span class="mt-1 text-[11px] text-on-surface-variant">2 files</span>
+</div>
+<div class="col-span-3 flex flex-col items-end justify-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-surface-container-high text-on-surface font-caption text-caption">
+                Awaiting review
+              </span>
+</div>
+</article>
+</div>
+<div class="mt-auto p-gutter border-t border-surface-dim bg-surface-container-low flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span>Showing 6 of 6 pending verifications</span>
+<span class="text-secondary font-body-sm-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">sync</span> Auto-refreshing queue
+          </span>
+</div>
+</section>
+<!-- RIGHT PANE: Selected Application Detail (approx 55% -> 7 cols / 12) -->
+<section class="lg:col-span-7 flex flex-col justify-between bg-surface-container-lowest">
+<div class="flex flex-col">
+<!-- Hospital Header Section -->
+<div class="p-gutter-md border-b border-surface-dim bg-surface-container-lowest">
+<div class="flex items-start justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-sm mb-1">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">St. Jude Trauma Center</h2>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 bg-secondary-container text-on-secondary-container font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[13px]">verified</span> Level 1 trauma hub
+                  </span>
+</div>
+<p class="font-body-base text-body-sm text-on-surface-variant">400 St. Jude Ave, Central District, Building B, Level 2</p>
+</div>
+<div class="text-right">
+<span class="font-caption text-caption text-on-surface-variant block">Case reference</span>
+<span class="font-body-sm-bold text-body-sm text-on-surface">APP-2026-0982</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-sm border-t border-surface-dim grid grid-cols-2 sm:grid-cols-3 gap-space-sm font-caption text-caption text-on-surface-variant">
+<div>
+<span class="block text-on-surface-variant">Official phone</span>
+<span class="font-body-bold text-on-surface">+1 (555) 234-8900</span>
+</div>
+<div>
+<span class="block text-on-surface-variant">Official website</span>
+<span class="font-body-bold text-secondary underline">stjudetrauma.org</span>
+</div>
+<div>
+<span class="block text-on-surface-variant">Facility registry code</span>
+<span class="font-body-bold text-on-surface">TX-HOSP-44912</span>
+</div>
+</div>
+</div>
+<!-- Submitter Information Card -->
+<div class="p-gutter-md border-b border-surface-dim bg-surface-container-low">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-caption text-caption uppercase tracking-wider text-on-surface-variant font-semibold">Submitter credentials</span>
+<span class="font-caption text-caption text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">check_circle</span> Institutional domain confirmed
+              </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-space-md">
+<div>
+<span class="font-caption text-caption text-on-surface-variant block">Authorized officer</span>
+<span class="font-body-bold text-body-base text-on-surface block">Dr. Elena Rostova</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Chief Medical Officer</span>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant block">Direct contact</span>
+<span class="font-body-base text-body-sm text-on-surface block">e.rostova@stjudetrauma.org</span>
+<span class="font-body-base text-body-sm text-on-surface-variant">+1 (555) 234-8912</span>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant block">Medical license ID</span>
+<span class="font-body-bold text-body-base text-on-surface block">MED-TX-984421</span>
+<span class="font-caption text-caption text-secondary">Verified active in state registry</span>
+</div>
+</div>
+</div>
+<!-- Embedded Document Verification Area -->
+<div class="p-gutter-md border-b border-surface-dim flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">description</span>
+<span class="font-title text-title text-on-surface font-semibold">Uploaded certificate</span>
+<span class="font-caption text-caption text-on-surface-variant">registration-certificate.pdf (1.8 MB)</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="font-caption text-caption text-secondary font-bold hover:underline flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">fullscreen</span> View full screen
+                </button>
+<span class="text-surface-dim">|</span>
+<button class="font-caption text-caption text-on-surface-variant font-bold hover:underline flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span> Download
+                </button>
+</div>
+</div>
+<!-- Realistic Embedded Certificate Preview (Pure CSS Medical Certificate) -->
+<div class="w-full bg-surface border border-surface-dim p-space-lg flex flex-col justify-between min-h-[380px] relative overflow-hidden">
+<!-- Watermark Stamp Overlay -->
+<div class="absolute right-8 top-12 border-2 border-surface-dim w-36 h-36 rounded-full flex flex-col items-center justify-center p-2 text-center pointer-events-none opacity-40">
+<span class="material-symbols-outlined text-[32px] text-surface-dim">health_and_safety</span>
+<span class="font-caption text-[9px] uppercase tracking-wider text-surface-dim font-bold mt-1">Official Registry Seal</span>
+<span class="font-caption text-[8px] text-surface-dim">State Health Board</span>
+</div>
+<!-- Certificate Header -->
+<div class="text-center pb-space-md border-b border-surface-dim">
+<div class="flex justify-center mb-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[28px]">local_hospital</span>
+</div>
+<h3 class="font-title text-headline-md text-on-surface font-bold">State Department of Health & Human Services</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Division of Healthcare Facility Regulation · Medical Licensing Authority</p>
+<span class="mt-2 inline-block font-body-sm-bold text-body-sm text-primary tracking-wide">License to Operate Hospital & Blood Transfusion Facility</span>
+</div>
+<!-- Certificate Body Text -->
+<div class="py-space-md flex flex-col gap-space-xs text-on-surface font-body-base text-body-sm max-w-xl mx-auto text-center">
+<p>This is to certify that pursuant to Section 402 of the Public Health Code, the medical institution designated below is fully licensed to administer emergency clinical services, trauma surgical procedures, and accredited blood banking facilities:</p>
+<div class="py-space-xs my-space-xs bg-surface-container-low border border-surface-dim">
+<p class="font-headline-md text-title font-bold text-on-surface">St. Jude Trauma Center</p>
+<p class="font-caption text-caption text-on-surface-variant">Trauma Designation: Level I Comprehensive Care · License ID: HC-7719-2024</p>
+</div>
+<div class="grid grid-cols-2 gap-space-md text-left pt-space-xs text-on-surface-variant font-caption text-caption">
+<div>
+<span class="block text-on-surface font-body-bold">Transfusion Authority:</span>
+<span>Class A full-spectrum whole blood, platelet apheresis, and cryoprecipitate storage.</span>
+</div>
+<div>
+<span class="block text-on-surface font-body-bold">Directing Physician:</span>
+<span>Dr. Elena Rostova, MD (Accreditation TX-984421)</span>
+</div>
+</div>
+</div>
+<!-- Certificate Footer Signatures -->
+<div class="pt-space-md border-t border-surface-dim flex items-end justify-between font-caption text-caption text-on-surface-variant">
+<div class="flex flex-col">
+<span class="font-body-base text-body-sm italic font-serif text-on-surface">Gov. Jonathan Vance, MD</span>
+<span class="w-36 h-px bg-surface-dim my-1"></span>
+<span>Commissioner of Health</span>
+</div>
+<div class="text-center">
+<span class="font-body-sm-bold text-on-surface">Effective Date: 12 Jan 2024</span>
+<span class="block">Valid through: 11 Jan 2028</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-body-base text-body-sm italic font-serif text-on-surface">Patricia Sterling, Registrar</span>
+<span class="w-36 h-px bg-surface-dim my-1"></span>
+<span>Bureau of Healthcare Records</span>
+</div>
+</div>
+</div>
+<!-- Secondary Attachments Strip -->
+<div class="mt-space-xs flex items-center gap-space-sm">
+<span class="font-caption text-caption text-on-surface-variant">Additional documents:</span>
+<div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container border border-surface-dim font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tertiary">attach_file</span>
+<span>official-appointment-letter.pdf (840 KB)</span>
+</div>
+</div>
+</div>
+<!-- Internal Reviewer Notes -->
+<div class="p-gutter-md bg-surface-container-lowest">
+<label class="block font-caption text-caption uppercase tracking-wider text-on-surface-variant font-semibold mb-space-xs" for="reviewer-notes">Internal note</label>
+<div class="relative">
+<textarea class="w-full p-space-sm bg-surface-container-low border border-surface-dim font-body-base text-body-sm text-on-surface focus:border-on-surface focus:outline-none placeholder:text-on-surface-variant" id="reviewer-notes" rows="2">Called hospital switchboard; verified Dr. Rostova is current CMO. Blood banking license cross-referenced with national registry.</textarea>
+</div>
+<div class="mt-1 flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span>Saved automatically by Dr. Sarah Chen</span>
+<span>Visible only to verified dispatch directors</span>
+</div>
+</div>
+</div>
+<!-- Sticky Review Decision Bar -->
+<div class="p-gutter-md border-t border-surface-dim bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<!-- Rejection Selector with reason -->
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<div class="relative">
+<select class="h-12 px-space-sm pr-7 bg-surface-container-lowest border border-outline text-on-surface font-body-base text-body-sm appearance-none focus:border-primary focus:outline-none">
+<option value="">Reason for rejection</option>
+<option value="unverifiable">Unverifiable contact</option>
+<option value="incomplete">Incomplete or expired documentation</option>
+<option value="unauthorized">Facility not authorized for blood banking</option>
+<option value="duplicate">Duplicate application</option>
+<option value="suspicious">Suspicious or altered documents</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[16px] pointer-events-none">expand_more</span>
+</div>
+<button class="h-12 px-space-md rounded-full border border-primary text-primary font-body-bold text-body-sm hover:bg-error-container hover:text-on-error-container transition-colors whitespace-nowrap" type="button">
+              Reject
+            </button>
+</div>
+<!-- Positive / Exploratory Actions -->
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end">
+<button class="h-12 px-space-md rounded-full border border-surface-dim text-on-surface bg-surface-container-lowest font-body-bold text-body-sm hover:bg-surface-container transition-colors whitespace-nowrap" type="button">
+              Request more info
+            </button>
+<button class="h-12 px-gutter-lg rounded-full bg-secondary text-on-secondary font-body-bold text-body-sm hover:brightness-95 transition-all flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Approve application</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div></main></div></body></html>

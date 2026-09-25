@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lifeline — Clinical Donor Onboarding Flow</title>
+<!-- Fonts: Bricolage Grotesque & Atkinson Hyperlegible -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            linen: '#F3F6F7',
+            ink: '#1B2330',
+            garnet: '#9E1B32',
+            mist: '#D6DEE2',
+            vein: '#1F7A6D',
+            'vein-bg': '#E8F3F1',
+            'tag-o': '#2F6FB5',
+            'tag-a': '#E3B23C',
+            'tag-b': '#D6698F',
+          },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'sans-serif'],
+            body: ['"Atkinson Hyperlegible"', 'sans-serif'],
+          },
+          boxShadow: {
+            'card': '0 1px 3px rgba(27, 35, 48, 0.04)',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="typography">
+    body {
+      font-family: 'Atkinson Hyperlegible', sans-serif;
+      background-color: #F3F6F7;
+      color: #1B2330;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      letter-spacing: -0.015em;
+    }
+  </style>
+<style data-purpose="blood-tag-shapes">
+    /* Blood Tag with authentic punched-hole circle detail */
+    .blood-tag {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem 0.5rem 1.75rem;
+      border-radius: 9999px;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 700;
+      line-height: 1;
+      transition: all 0.15s ease-in-out;
+    }
+    .blood-tag::before {
+      content: '';
+      position: absolute;
+      left: 0.55rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      opacity: 0.95;
+    }
+    .blood-tag.tag-a::before,
+    .blood-tag.tag-ab::before {
+      background-color: #1B2330;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-ink pb-16 antialiased selection:bg-garnet/10 selection:text-garnet">
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-30 bg-[#F3F6F7]/95 backdrop-blur-md border-b border-mist px-4 py-3 sm:px-6">
+<div class="max-w-6xl mx-auto flex items-center justify-between">
+<!-- Lifeline Wordmark with Garnet Dot -->
+<div class="flex items-center space-x-2">
+<div class="flex items-center text-xl font-heading font-extrabold tracking-tight">
+          Lifeline
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-garnet ml-1 mb-0.5"></span>
+</div>
+</div>
+<!-- Clinical Security Badge -->
+<div class="flex items-center space-x-1.5 text-xs font-semibold text-vein tracking-wide uppercase px-2.5 py-1 rounded-full bg-white border border-mist/80">
+<svg class="w-3.5 h-3.5 text-vein flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Clinical Secure</span>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: FlowPresentationBanner -->
+<section aria-label="Onboarding Controls" class="max-w-6xl mx-auto px-4 pt-6 pb-2">
+<!-- View Switcher & Flow Summary Bar -->
+<div class="bg-white border border-mist rounded-2xl p-4 sm:p-5 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center space-x-2">
+<span class="w-2.5 h-2.5 rounded-full bg-garnet"></span>
+<h1 class="text-lg sm:text-xl font-heading font-bold text-ink">Donor registration flow</h1>
+</div>
+<p class="text-sm text-ink/75 mt-0.5">Three steps to connect your blood group to regional emergency alert thresholds.</p>
+</div>
+<!-- Segmented Step Switcher (Syncs with scroll view or toggles mobile tab) -->
+<div class="inline-flex p-1 bg-linen border border-mist rounded-xl self-start md:self-auto text-xs font-semibold" role="tablist">
+<button aria-selected="true" class="px-3.5 py-1.5 rounded-lg transition bg-white text-ink shadow-sm" id="tab-all" onclick="setViewMode('all')" role="tab">
+          All steps
+        </button>
+<button aria-selected="false" class="px-3 py-1.5 rounded-lg transition text-ink/70 hover:text-ink" id="tab-step1" onclick="setViewMode('step1')" role="tab">
+          1. Role
+        </button>
+<button aria-selected="false" class="px-3 py-1.5 rounded-lg transition text-ink/70 hover:text-ink" id="tab-step2" onclick="setViewMode('step2')" role="tab">
+          2. Group
+        </button>
+<button aria-selected="false" class="px-3 py-1.5 rounded-lg transition text-ink/70 hover:text-ink" id="tab-step3" onclick="setViewMode('step3')" role="tab">
+          3. Eligibility
+        </button>
+</div>
+</div>
+</section>
+<!-- END: FlowPresentationBanner -->
+<!-- BEGIN: ThreeStepContainer -->
+<main class="max-w-6xl mx-auto px-4">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start" id="stepsGrid">
+<!-- ========================================================== -->
+<!-- STEP 1: ROLE SELECTION -->
+<!-- ========================================================== -->
+<article class="step-card bg-white rounded-3xl border border-mist p-6 flex flex-col justify-between shadow-card transition-all" data-step="1" id="card-step1">
+<div>
+<!-- Card Header & Progress -->
+<div class="mb-5 pb-4 border-b border-mist">
+<div class="flex items-center justify-between text-xs font-bold text-ink/60 uppercase tracking-wider mb-2">
+<span class="flex items-center text-garnet font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-garnet inline-block mr-1.5"></span>
+                Step 1 of 3
+              </span>
+<span>Role Selection</span>
+</div>
+<!-- Progress Bar: 33% -->
+<div class="w-full bg-linen h-1.5 rounded-full overflow-hidden">
+<div class="bg-garnet h-full rounded-full" style="width: 33%;"></div>
+</div>
+</div>
+<!-- Lifeline Mini Branding -->
+<div class="flex items-center text-base font-heading font-extrabold text-ink mb-3">
+            Lifeline<span class="w-1.5 h-1.5 rounded-full bg-garnet ml-1"></span>
+</div>
+<!-- Screen Titles -->
+<h2 class="text-2xl font-heading font-bold text-ink mb-1.5">How will you use Lifeline?</h2>
+<p class="text-sm text-ink/75 leading-relaxed mb-6">
+            Choose your primary focus to personalize urgent alert thresholds.
+          </p>
+<!-- Radio Options -->
+<div aria-label="Choose your role" class="space-y-3" role="radiogroup">
+<!-- Option A: Selected -->
+<label class="relative flex items-start p-4 rounded-2xl border-2 border-garnet bg-garnet/[0.02] cursor-pointer transition">
+<input checked="" class="sr-only" name="user_role" type="radio" value="donor"/>
+<div class="w-5 h-5 rounded-full border-2 border-garnet flex items-center justify-center mt-0.5 mr-3.5 flex-shrink-0 bg-white">
+<div class="w-2.5 h-2.5 rounded-full bg-garnet"></div>
+</div>
+<div class="flex-1 text-left">
+<span class="block text-base font-heading font-bold text-ink leading-tight">I want to donate blood</span>
+<span class="block text-xs text-ink/70 mt-1 leading-normal">Get notified when someone nearby needs your blood group</span>
+</div>
+</label>
+<!-- Option B: Unselected -->
+<label class="relative flex items-start p-4 rounded-2xl border border-mist bg-white hover:border-ink/30 cursor-pointer transition">
+<input class="sr-only" name="user_role" type="radio" value="recipient"/>
+<div class="w-5 h-5 rounded-full border border-mist flex items-center justify-center mt-0.5 mr-3.5 flex-shrink-0 bg-white">
+<div class="w-2.5 h-2.5 rounded-full bg-transparent"></div>
+</div>
+<div class="flex-1 text-left">
+<span class="block text-base font-heading font-bold text-ink leading-tight">I need blood for someone</span>
+<span class="block text-xs text-ink/70 mt-1 leading-normal">Post a request and reach compatible donors</span>
+</div>
+</label>
+</div>
+<!-- Reassurance Helper Note -->
+<div class="mt-4 pt-2 text-center">
+<span class="text-xs text-ink/60">You can do both later.</span>
+</div>
+</div>
+<!-- Footer / Primary CTA -->
+<div class="mt-8 pt-4 border-t border-mist/70">
+<button class="w-full min-h-[48px] py-3.5 px-6 rounded-full bg-garnet text-white font-heading font-bold text-base hover:bg-garnet/95 active:scale-[0.99] transition shadow-sm text-center" type="button">
+            Continue
+          </button>
+<div class="mt-4 flex items-center justify-center text-[11px] text-ink/60">
+<svg class="w-3.5 h-3.5 mr-1.5 text-vein" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Encrypted HIPAA-compliant clinical dispatch</span>
+</div>
+</div>
+</article>
+<!-- ========================================================== -->
+<!-- STEP 2: BLOOD GROUP SELECTION -->
+<!-- ========================================================== -->
+<article class="step-card bg-white rounded-3xl border border-mist p-6 flex flex-col justify-between shadow-card transition-all" data-step="2" id="card-step2">
+<div>
+<!-- Card Header & Progress -->
+<div class="mb-5 pb-4 border-b border-mist">
+<div class="flex items-center justify-between text-xs font-bold text-ink/60 uppercase tracking-wider mb-2">
+<span class="flex items-center text-garnet font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-garnet inline-block mr-1.5"></span>
+                Step 2 of 3
+              </span>
+<span>Blood Group</span>
+</div>
+<!-- Progress Bar: 66% -->
+<div class="w-full bg-linen h-1.5 rounded-full overflow-hidden">
+<div class="bg-garnet h-full rounded-full" style="width: 66%;"></div>
+</div>
+</div>
+<!-- Lifeline Mini Branding -->
+<div class="flex items-center text-base font-heading font-extrabold text-ink mb-3">
+            Lifeline<span class="w-1.5 h-1.5 rounded-full bg-garnet ml-1"></span>
+</div>
+<!-- Screen Titles -->
+<h2 class="text-2xl font-heading font-bold text-ink mb-1.5">What's your blood group?</h2>
+<p class="text-sm text-ink/75 leading-relaxed mb-5">
+            We'll only notify you when compatible patients or urgent hospital wards post a verified request.
+          </p>
+<!-- 4x2 Grid of All 8 Blood Group Tags -->
+<div aria-label="Select your blood group" class="grid grid-cols-2 gap-2.5 my-4" role="radiogroup">
+<!-- O+ (Selected State: Thick Ink Outline & Selection Checkmark Badge) -->
+<button class="blood-tag bg-tag-o text-white text-base py-3 ring-2 ring-ink ring-offset-2 relative flex items-center justify-between" type="button">
+<span>O+</span>
+<span class="ml-auto w-5 h-5 rounded-full bg-ink text-white flex items-center justify-center text-xs">
+<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</span>
+</button>
+<!-- O- -->
+<button class="blood-tag bg-tag-o text-white text-base py-3 hover:opacity-90" type="button">
+<span>O−</span>
+</button>
+<!-- A+ -->
+<button class="blood-tag tag-a bg-tag-a text-ink text-base py-3 hover:opacity-90" type="button">
+<span>A+</span>
+</button>
+<!-- A- -->
+<button class="blood-tag tag-a bg-tag-a text-ink text-base py-3 hover:opacity-90" type="button">
+<span>A−</span>
+</button>
+<!-- B+ -->
+<button class="blood-tag bg-tag-b text-white text-base py-3 hover:opacity-90" type="button">
+<span>B+</span>
+</button>
+<!-- B- -->
+<button class="blood-tag bg-tag-b text-white text-base py-3 hover:opacity-90" type="button">
+<span>B−</span>
+</button>
+<!-- AB+ (White with 1.5px ink outline) -->
+<button class="blood-tag tag-ab bg-white border-[1.5px] border-ink text-ink text-base py-3 hover:bg-linen" type="button">
+<span>AB+</span>
+</button>
+<!-- AB- (White with 1.5px ink outline) -->
+<button class="blood-tag tag-ab bg-white border-[1.5px] border-ink text-ink text-base py-3 hover:bg-linen" type="button">
+<span>AB−</span>
+</button>
+</div>
+<!-- Helper Accordion/Note for Unknown Blood Group -->
+<div class="mt-4 pt-1">
+<details class="group rounded-2xl bg-linen border border-mist/80 px-3.5 py-2.5 text-xs">
+<summary class="font-semibold text-ink/80 hover:text-ink cursor-pointer list-none flex items-center justify-between">
+<span>I don't know my blood group</span>
+<svg class="w-4 h-4 text-ink/50 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</summary>
+<div class="mt-2 pt-2 border-t border-mist text-ink/75 leading-relaxed">
+                Check a previous donor card or medical lab results. You can also request a free 2-minute rapid capillary group test at any accredited hospital check-in counter.
+              </div>
+</details>
+</div>
+</div>
+<!-- Footer / Primary CTA -->
+<div class="mt-8 pt-4 border-t border-mist/70">
+<button class="w-full min-h-[48px] py-3.5 px-6 rounded-full bg-garnet text-white font-heading font-bold text-base hover:bg-garnet/95 active:scale-[0.99] transition shadow-sm text-center" type="button">
+            Continue
+          </button>
+<div class="mt-4 flex items-center justify-center text-[11px] text-ink/60">
+<svg class="w-3.5 h-3.5 mr-1.5 text-vein" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Red Cross compatibility rules enforced automatically</span>
+</div>
+</div>
+</article>
+<!-- ========================================================== -->
+<!-- STEP 3: ELIGIBILITY & LOCATION -->
+<!-- ========================================================== -->
+<article class="step-card bg-white rounded-3xl border border-mist p-6 flex flex-col justify-between shadow-card transition-all" data-step="3" id="card-step3">
+<div>
+<!-- Card Header & Progress (100% in Vein Teal) -->
+<div class="mb-5 pb-4 border-b border-mist">
+<div class="flex items-center justify-between text-xs font-bold text-ink/60 uppercase tracking-wider mb-2">
+<span class="flex items-center text-vein font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-vein inline-block mr-1.5"></span>
+                Step 3 of 3
+              </span>
+<span>Eligibility &amp; Area</span>
+</div>
+<!-- Progress Bar: 100% Filled in Vein -->
+<div class="w-full bg-linen h-1.5 rounded-full overflow-hidden">
+<div class="bg-vein h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<!-- Lifeline Mini Branding -->
+<div class="flex items-center text-base font-heading font-extrabold text-ink mb-3">
+            Lifeline<span class="w-1.5 h-1.5 rounded-full bg-garnet ml-1"></span>
+</div>
+<!-- Section 1: Last Donation -->
+<h2 class="text-2xl font-heading font-bold text-ink mb-1.5">When did you last donate?</h2>
+<p class="text-sm text-ink/75 leading-relaxed mb-3">
+            Ensures medical dispatch adheres to the 56-day clinical rest period.
+          </p>
+<div class="space-y-2 mb-3">
+<div class="relative">
+<input class="w-full px-4 py-2.5 rounded-xl border border-mist text-ink text-sm font-semibold focus:border-ink focus:ring-1 focus:ring-ink outline-none bg-linen/50" placeholder="DD / MM / YYYY" type="text" value="14 / 01 / 2024"/>
+<span class="absolute right-3.5 top-2.5 text-xs text-ink/50 uppercase font-mono tracking-wider">Date</span>
+</div>
+<label class="flex items-center space-x-2.5 py-1 text-xs text-ink/80 cursor-pointer">
+<input class="rounded border-mist text-vein focus:ring-vein/30 w-4 h-4" type="checkbox"/>
+<span>I've never donated blood before</span>
+</label>
+</div>
+<!-- Eligibility Result Box (Vein Teal Tint) -->
+<div class="bg-vein-bg border border-vein/30 rounded-2xl p-3.5 mb-5 flex items-start space-x-3">
+<div class="w-6 h-6 rounded-full bg-vein text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="text-xs">
+<span class="font-heading font-bold text-vein text-sm block">You're eligible to donate now</span>
+<p class="text-ink/80 mt-0.5 leading-snug">Standard whole blood interval of 56 days satisfied since your previous donation.</p>
+</div>
+</div>
+<!-- Section 2: Location -->
+<div class="pt-3 border-t border-mist/80">
+<h3 class="text-sm font-heading font-bold text-ink mb-1">Your neighborhood</h3>
+<div class="space-y-2.5 mt-2">
+<!-- Location Primary Button -->
+<button class="w-full py-2.5 px-3 rounded-xl border border-mist hover:border-ink/40 bg-white flex items-center justify-center space-x-2 text-xs font-semibold text-ink transition" type="button">
+<svg class="w-4 h-4 text-vein" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Use my current location</span>
+</button>
+<!-- Alternate Manual Input -->
+<div>
+<input class="w-full px-3.5 py-2.5 rounded-xl border border-mist text-ink text-xs focus:border-ink focus:ring-1 focus:ring-ink outline-none bg-linen/40" placeholder="Choose area manually" type="text" value="Central District, Metro General area"/>
+</div>
+<!-- Privacy Note -->
+<p class="text-[11px] text-ink/60 text-left">
+                We store your approximate area, not your exact address.
+              </p>
+</div>
+</div>
+</div>
+<!-- Footer / Primary CTA -->
+<div class="mt-6 pt-4 border-t border-mist/70">
+<button class="w-full min-h-[48px] py-3.5 px-6 rounded-full bg-garnet text-white font-heading font-bold text-base hover:bg-garnet/95 active:scale-[0.99] transition shadow-sm text-center" type="button">
+            Finish setup
+          </button>
+<div class="mt-4 flex items-center justify-center text-[11px] text-ink/60">
+<span class="w-1.5 h-1.5 rounded-full bg-vein mr-1.5"></span>
+<span>You'll only receive high-urgency notifications</span>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- END: ThreeStepContainer -->
+<!-- BEGIN: BottomEngineStatus -->
+<section aria-label="System status" class="max-w-6xl mx-auto px-4 mt-8">
+<div class="bg-linen border border-mist rounded-2xl p-4 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-xl bg-white border border-mist flex items-center justify-center text-vein flex-shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-xs font-bold text-ink font-heading">Direct Donor Match Engine</h4>
+<p class="text-[11px] text-ink/70">Autonomous radius matching for verified hospital blood bank dispatches.</p>
+</div>
+</div>
+<div class="bg-vein-bg text-vein font-mono text-[11px] font-bold px-2.5 py-1 rounded-full border border-vein/30">
+        Live v2.4
+      </div>
+</div>
+</section>
+<!-- END: BottomEngineStatus -->
+<!-- BEGIN: ViewSwitcherScript -->
+<script data-purpose="step-visibility-toggle">
+    /**
+     * Toggles between responsive comparative multi-column view and single focused step
+     */
+    function setViewMode(mode) {
+      const cards = {
+        step1: document.getElementById('card-step1'),
+        step2: document.getElementById('card-step2'),
+        step3: document.getElementById('card-step3'),
+      };
+      
+      const buttons = {
+        all: document.getElementById('tab-all'),
+        step1: document.getElementById('tab-step1'),
+        step2: document.getElementById('tab-step2'),
+        step3: document.getElementById('tab-step3'),
+      };
+
+      // Reset tabs styling
+      Object.values(buttons).forEach(btn => {
+        btn.classList.remove('bg-white', 'text-ink', 'shadow-sm');
+        btn.classList.add('text-ink/70');
+        btn.setAttribute('aria-selected', 'false');
+      });
+
+      // Highlight active button
+      if (buttons[mode]) {
+        buttons[mode].classList.add('bg-white', 'text-ink', 'shadow-sm');
+        buttons[mode].classList.remove('text-ink/70');
+        buttons[mode].setAttribute('aria-selected', 'true');
+      }
+
+      const grid = document.getElementById('stepsGrid');
+
+      if (mode === 'all') {
+        grid.className = 'grid grid-cols-1 lg:grid-cols-3 gap-6 items-start';
+        Object.values(cards).forEach(card => card.classList.remove('hidden'));
+      } else {
+        grid.className = 'grid grid-cols-1 max-w-md mx-auto gap-6 items-start';
+        Object.keys(cards).forEach(key => {
+          if (key === mode) {
+            cards[key].classList.remove('hidden');
+          } else {
+            cards[key].classList.add('hidden');
+          }
+        });
+      }
+    }
+  </script>
+<!-- END: ViewSwitcherScript -->
+</body></html>
