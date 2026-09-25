@@ -101,7 +101,7 @@ export default async function PublicRequestPage({ params }: RequestPageProps) {
       {request.note ? (
         <section className="border-t border-mist px-4 py-8">
           <h2 className="text-section text-ink">{copy.request.noteFromRequester}</h2>
-          <p className="max-w-prose border-l-2 border-vein pt-3 pl-4 text-body text-ink">
+          <p className="mt-3 max-w-prose border-l-2 border-mist pl-4 text-body text-ink">
             {request.note}
           </p>
         </section>
