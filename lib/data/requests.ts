@@ -48,8 +48,16 @@ function canSeeContact(record: BloodRequestRecord, viewerId: string): boolean {
 }
 
 function toView(record: BloodRequestRecord, viewerId: string): BloodRequest {
-  const { contact, ...rest } = record;
-  return { ...rest, contact: canSeeContact(record, viewerId) ? contact : null };
+  const { contact, patientName, ...rest } = record;
+  const visible = canSeeContact(record, viewerId);
+
+  // The patient's name is as private as the phone number, and the copy on the
+  // request form promises it is only shown to donors who pledge.
+  return {
+    ...rest,
+    patientName: visible ? patientName : null,
+    contact: visible ? contact : null,
+  };
 }
 
 function records(now: Date = new Date()): BloodRequestRecord[] {
