@@ -1,0 +1,6 @@
+.next
+node_modules
+package-lock.json
+
+# Stitch design exports, kept verbatim as reference.
+stitch_lifeline_blood_donor_system

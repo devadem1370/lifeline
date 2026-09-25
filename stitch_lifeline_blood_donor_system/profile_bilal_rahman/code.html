@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400..700;1,400..700&amp;family=Bricolage+Grotesque:opsz,wght@12..96,600..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "outline-variant": "#e0bfbf", "tertiary-fixed-dim": "#a3c9ff", "surface-container-highest": "#dbe3f5", "on-secondary-fixed": "#00201b", "secondary-container": "#9cefdf", "secondary-fixed-dim": "#83d5c6", "secondary": "#006b5e", "on-tertiary-container": "#a1c7ff", "outline": "#8c7071", "surface-container-lowest": "#ffffff", "surface-tint": "#b02a3e", "on-tertiary": "#ffffff", "surface-dim": "#d2daec", "surface-container-low": "#f0f3ff", "primary-fixed": "#ffdada", "surface": "#f9f9ff", "on-primary": "#ffffff", "secondary-fixed": "#9ff2e2", "on-tertiary-fixed-variant": "#004883", "on-error-container": "#93000a", "on-surface-variant": "#594141", "tertiary-container": "#005395", "surface-bright": "#f9f9ff", "error": "#ba1a1a", "on-secondary-container": "#0a6f62", "on-primary-fixed-variant": "#8f0c28", "on-error": "#ffffff", "inverse-on-surface": "#ebf1ff", "on-primary-fixed": "#40000c", "primary-fixed-dim": "#ffb3b5", "surface-container-high": "#e0e8fa", "on-background": "#141c29", "on-tertiary-fixed": "#001c39", "surface-container": "#e7eeff", "primary-container": "#9e1b32", "primary": "#7b001f", "on-secondary-fixed-variant": "#005047", "inverse-surface": "#29313e", "background": "#f9f9ff", "tertiary": "#003c6e", "tertiary-fixed": "#d3e3ff", "inverse-primary": "#ffb3b5", "on-surface": "#141c29", "on-secondary": "#ffffff", "on-primary-container": "#ffb0b3", "surface-variant": "#dbe3f5", "error-container": "#ffdad6" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "gutter-md": "1.5rem", "margin-lg": "3rem", "space-md": "1rem", "margin": "1rem", "margin-md": "1.5rem", "space-sm": "0.5rem", "gutter-lg": "2rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter": "1rem" }, fontFamily: { "headline-lg": ["Bricolage Grotesque"], "body-bold": ["Atkinson Hyperlegible Next"], "title": ["Bricolage Grotesque"], "body-lg": ["Atkinson Hyperlegible Next"], "display-mobile": ["Bricolage Grotesque"], "headline-md": ["Bricolage Grotesque"], "body-sm-bold": ["Atkinson Hyperlegible Next"], "tag": ["Bricolage Grotesque"], "display": ["Bricolage Grotesque"], "body-base": ["Atkinson Hyperlegible Next"], "caption": ["Atkinson Hyperlegible Next"], "body-sm": ["Atkinson Hyperlegible Next"], "headline-lg-mobile": ["Bricolage Grotesque"] }, fontSize: { "headline-lg": ["2rem", { "lineHeight": "1.25", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-bold": ["1rem", { "lineHeight": "1.5", "fontWeight": "700" }], "title": ["1.125rem", { "lineHeight": "1.4", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.5", "fontWeight": "400" }], "display-mobile": ["2rem", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-md": ["1.375rem", { "lineHeight": "1.35", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm-bold": ["0.875rem", { "lineHeight": "1.4", "fontWeight": "700" }], "tag": ["0.875rem", { "lineHeight": "1", "fontWeight": "700" }], "display": ["2.75rem", { "lineHeight": "1.15", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-base": ["1rem", { "lineHeight": "1.5", "fontWeight": "400" }], "caption": ["0.75rem", { "lineHeight": "1.35", "fontWeight": "400" }], "body-sm": ["0.875rem", { "lineHeight": "1.4", "fontWeight": "400" }], "headline-lg-mobile": ["1.625rem", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-base text-body-base text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[24px]">vital_signs</span><h1 class="font-title text-title text-on-surface tracking-tight">Profile</h1></div><div class="flex items-center"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-margin pb-space-xl">
+<!-- Profile Identity Card -->
+<section class="pt-space-md pb-space-lg flex items-center justify-between">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-title text-title flex-shrink-0 select-none">
+        BR
+        <span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-secondary ring-2 ring-surface"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight truncate">Bilal Rahman</h2>
+<!-- Blood Group O+ Physical Tag Motif -->
+<div class="inline-flex items-center h-8 pl-3.5 pr-2.5 rounded-r-[6px] rounded-l-none bg-[#2F6FB5] text-white relative flex-shrink-0 select-none" style="background-color: #2F6FB5;">
+<div class="absolute left-[-4px] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-surface"></div>
+<span class="font-tag text-tag tracking-wider text-white">O+</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Donor since March 2026</p>
+</div>
+</div>
+</section>
+<!-- Eligibility Block -->
+<section class="bg-surface-container-low rounded-DEFAULT p-space-md mb-space-lg">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-body-sm-bold text-body-sm-bold text-on-surface">Next eligible:</span>
+<span class="inline-flex items-center gap-1 font-body-sm-bold text-body-sm-bold text-secondary">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+            now
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Last donated: <span class="font-body-bold text-on-surface">2 June 2026</span>
+</p>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-[18px]">verified</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container-highest">
+<p class="font-body-sm text-body-sm text-on-surface">
+        You are currently ready to receive matching urgent donor requests.
+      </p>
+</div>
+</section>
+<!-- Donation Record Section -->
+<section class="mb-space-lg">
+<div class="flex items-center justify-between pb-space-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface">3 donations</h3>
+<span class="font-caption text-caption text-on-surface-variant bg-surface-container-highest px-2 py-0.5 rounded-full">
+        3.0 units total
+      </span>
+</div>
+<!-- Connected Timeline -->
+<div class="relative pl-6 py-2 flex flex-col gap-space-lg">
+<!-- Vertical Rule Line -->
+<div class="absolute left-[7px] top-4 bottom-4 w-px bg-surface-container-highest"></div>
+<!-- Node 1 -->
+<div class="relative flex flex-col">
+<div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-secondary ring-4 ring-surface"></div>
+<div class="flex items-baseline justify-between">
+<span class="font-body-bold text-body-bold text-on-surface">2 June 2026</span>
+<span class="font-caption text-caption text-secondary font-body-sm-bold">Fulfilled</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          City General Hospital · 1 whole blood unit
+        </p>
+</div>
+<!-- Node 2 -->
+<div class="relative flex flex-col">
+<div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-on-surface-variant ring-4 ring-surface"></div>
+<div class="flex items-baseline justify-between">
+<span class="font-body-bold text-body-bold text-on-surface">14 January 2026</span>
+<span class="font-caption text-caption text-on-surface-variant">Fulfilled</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          St. Jude Trauma Center · 1 whole blood unit
+        </p>
+</div>
+<!-- Node 3 -->
+<div class="relative flex flex-col">
+<div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-on-surface-variant ring-4 ring-surface"></div>
+<div class="flex items-baseline justify-between">
+<span class="font-body-bold text-body-bold text-on-surface">28 August 2025</span>
+<span class="font-caption text-caption text-on-surface-variant">Fulfilled</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Mercy Red Cross Clinic · 1 whole blood unit
+        </p>
+</div>
+</div>
+</section>
+<!-- Preferences & Settings Flat Rows -->
+<section class="flex flex-col mb-space-xl">
+<div class="text-caption font-caption text-on-surface-variant uppercase tracking-wider mb-2">
+      Preferences &amp; Dispatch
+    </div>
+<!-- Row: Available for Requests -->
+<div class="py-3.5 flex items-center justify-between border-t border-surface-container-highest">
+<div class="pr-space-md">
+<span class="font-body-base text-body-base text-on-surface block">Available for requests</span>
+<span class="font-caption text-caption text-on-surface-variant">Receive priority bedside emergency notifications</span>
+</div>
+<button aria-checked="true" class="w-12 h-7 rounded-full bg-secondary transition-colors relative flex items-center px-0.5 cursor-pointer flex-shrink-0" id="toggle-availability" role="switch">
+<span class="w-6 h-6 rounded-full bg-on-secondary shadow-sm transition-transform translate-x-5" id="toggle-thumb"></span>
+</button>
+</div>
+<!-- Row: Radius -->
+<div class="py-3.5 flex items-center justify-between border-t border-surface-container-highest">
+<span class="font-body-base text-body-base text-on-surface">Notify me for requests within</span>
+<span class="font-body-bold text-body-bold text-on-surface">10 km</span>
+</div>
+<!-- Row: Quiet Hours -->
+<div class="py-3.5 flex items-center justify-between border-t border-surface-container-highest">
+<span class="font-body-base text-body-base text-on-surface">Quiet hours</span>
+<span class="font-body-base text-body-base text-on-surface-variant">11 pm to 7 am</span>
+</div>
+<!-- Row: My Area -->
+<div class="py-3.5 flex items-center justify-between border-t border-surface-container-highest">
+<div>
+<span class="font-body-base text-body-base text-on-surface block">My area</span>
+<span class="font-caption text-caption text-on-surface-variant">Downtown Medical District</span>
+</div>
+<button class="font-body-sm-bold text-body-sm-bold text-primary underline underline-offset-4 decoration-primary/40 hover:decoration-primary">
+        Change
+      </button>
+</div>
+<!-- Row: Phone Number -->
+<div class="py-3.5 flex flex-col gap-0.5 border-t border-surface-container-highest">
+<div class="flex items-center justify-between">
+<span class="font-body-base text-body-base text-on-surface">Phone number</span>
+<span class="font-body-base text-body-base text-on-surface">+1 (555) 382-9014</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Shared only after you pledge</span>
+</div>
+<!-- Row: Blood Group -->
+<div class="py-3.5 flex items-center justify-between border-t border-b border-surface-container-highest">
+<div class="flex flex-col">
+<span class="font-body-base text-body-base text-on-surface">Blood group</span>
+<span class="font-caption text-caption text-on-surface-variant">Contact support to change</span>
+</div>
+<div class="inline-flex items-center h-7 pl-3 pr-2 rounded-r-[4px] rounded-l-none bg-[#2F6FB5] text-white relative select-none">
+<div class="absolute left-[-3px] top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-surface"></div>
+<span class="font-tag text-tag text-white">O+</span>
+</div>
+</div>
+</section>
+<!-- Account Actions -->
+<section class="flex flex-col items-center gap-space-md pt-space-xs">
+<button class="w-full h-12 rounded-full border border-surface-container-highest text-on-surface font-body-bold text-body-bold hover:bg-surface-container-low transition-colors">
+      Sign out
+    </button>
+<button class="font-body-sm text-body-sm text-error/80 hover:text-error transition-colors underline underline-offset-4 decoration-error/30 pb-4">
+      Delete my account
+    </button>
+</section>
+</div>
+<script>
+  (function() {
+    const toggle = document.getElementById('toggle-availability');
+    const thumb = document.getElementById('toggle-thumb');
+    let active = true;
+
+    if (toggle && thumb) {
+      toggle.addEventListener('click', function() {
+        active = !active;
+        toggle.setAttribute('aria-checked', active ? 'true' : 'false');
+        if (active) {
+          toggle.classList.remove('bg-surface-container-highest');
+          toggle.classList.add('bg-secondary');
+          thumb.classList.remove('translate-x-0');
+          thumb.classList.add('translate-x-5');
+        } else {
+          toggle.classList.remove('bg-secondary');
+          toggle.classList.add('bg-surface-container-highest');
+          thumb.classList.remove('translate-x-5');
+          thumb.classList.add('translate-x-0');
+        }
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/80 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-body-sm-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">water_drop</span><span class="font-caption text-caption">Home</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="my-requests" href="#"><span class="material-symbols-outlined text-[22px]">clinical_notes</span><span class="font-caption text-caption">My requests</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="notifications" href="#"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="font-caption text-caption">Notifications</span></a><a aria-current="page" class="flex flex-col items-center justify-center w-16 h-12 transition-colors gap-0.5 text-primary font-body-sm-bold" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-caption text-caption">Profile</span></a></div></nav></body></html>
