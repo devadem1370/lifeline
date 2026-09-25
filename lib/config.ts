@@ -35,6 +35,12 @@ export const config = {
   maxNoteLength: 200,
 
   /**
+   * Stands in for a real one-time code until auth exists. It only unlocks a
+   * confirmation screen, and it goes when sign in becomes real.
+   */
+  demoSignInCode: "123456",
+
+  /**
    * Every screen carries a demo notice while this is true. Real hospital names
    * appear in invented requests, so nobody should mistake them for real ones.
    * Turn this off only when the app is reading live data.

@@ -19,6 +19,13 @@ const dateFormatter = new Intl.DateTimeFormat(config.locale, {
   year: "numeric",
 });
 
+const numberFormatter = new Intl.NumberFormat(config.locale);
+
+const monthFormatter = new Intl.DateTimeFormat(config.locale, {
+  timeZone: config.timeZone,
+  month: "short",
+});
+
 const dayPartsFormatter = new Intl.DateTimeFormat("en-US", {
   timeZone: config.timeZone,
   year: "numeric",
@@ -40,6 +47,16 @@ function karachiDay(date: Date): number {
 /** "6:00 pm". */
 export function formatTime(iso: string): string {
   return timeFormatter.format(new Date(iso));
+}
+
+/** "1,284". */
+export function formatNumber(value: number): string {
+  return numberFormatter.format(value);
+}
+
+/** "Apr". */
+export function formatMonth(date: Date): string {
+  return monthFormatter.format(date);
 }
 
 /** "25 September 2026". */

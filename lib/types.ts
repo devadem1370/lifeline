@@ -127,3 +127,24 @@ export interface CurrentUser {
   radiusKm: number;
   isAdmin: boolean;
 }
+
+/** One bar on the impact chart. */
+export interface MonthlyFulfilled {
+  /** "Apr", already formatted for display. */
+  month: string;
+  requests: number;
+}
+
+/** How many requests asked for a given blood group. */
+export interface GroupDemand {
+  bloodGroup: BloodGroup;
+  requests: number;
+}
+
+export interface ImpactSummary {
+  requestsFulfilled: number;
+  donors: number;
+  hospitals: number;
+  perMonth: MonthlyFulfilled[];
+  byGroup: GroupDemand[];
+}
