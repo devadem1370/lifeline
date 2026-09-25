@@ -2,6 +2,7 @@ import { donorRecords } from "@/lib/mock/donors";
 import { pledgeSeeds } from "@/lib/mock/pledges";
 import { requestSeeds } from "@/lib/mock/requests";
 import { currentUser } from "@/lib/mock/user";
+import { shortName } from "@/lib/format";
 import type { Donor, Pledge } from "@/lib/types";
 
 const MINUTE = 60 * 1000;
@@ -54,6 +55,12 @@ export async function listDonorsForRequest(
     const record = donorRecords.find((donor) => donor.id === pledge.donorId);
     if (!record) return [];
     const { contact, ...rest } = record;
-    return [{ ...rest, contact: viewerPostedIt ? contact : null }];
+    return [
+      {
+        ...rest,
+        name: shortName(record.name),
+        contact: viewerPostedIt ? contact : null,
+      },
+    ];
   });
 }

@@ -4,11 +4,12 @@ import type { CurrentUser } from "@/lib/types";
 /** The signed in donor the app is rendered for while there is no auth. */
 export const currentUser: CurrentUser = {
   id: "user-bilal",
-  name: "Bilal Rahman",
+  name: "Bilal Ahmed",
   bloodGroup: "O+",
-  phone: "+880 1711 234567",
-  area: "Banani, Dhaka",
-  lastDonationAt: "2026-05-02T10:30:00",
+  sex: "male",
+  phone: "+92 300 0000101",
+  area: "Model Town, Lahore",
+  lastDonationAt: "2026-05-02T10:30:00+05:00",
   availableForRequests: true,
   radiusKm: config.defaultRadiusKm,
   isAdmin: false,

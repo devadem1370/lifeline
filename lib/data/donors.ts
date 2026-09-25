@@ -1,5 +1,6 @@
 import { donorRecords } from "@/lib/mock/donors";
 import { currentUser } from "@/lib/mock/user";
+import { shortName } from "@/lib/format";
 import type { CurrentUser, Donor } from "@/lib/types";
 
 /** The signed in person. There is no auth yet, so this is always the same donor. */
@@ -17,8 +18,9 @@ export async function getDonor(id: string): Promise<Donor | null> {
 
   return {
     id: record.id,
-    name: record.name,
+    name: shortName(record.name),
     bloodGroup: record.bloodGroup,
+    sex: record.sex,
     area: record.area,
     distanceKm: record.distanceKm,
     lastDonationAt: record.lastDonationAt,

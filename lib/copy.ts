@@ -1,4 +1,5 @@
 import { config } from "@/lib/config";
+import type { Sex } from "@/lib/types";
 
 /**
  * Every string the interface shows, in one place, so one action keeps one name.
@@ -63,7 +64,18 @@ export const copy = {
     radiusLabel: "Distance from you",
     withinKm: (km: number = config.defaultRadiusKm) => `Within ${km} km`,
     radiusRange: `${config.minRadiusKm} to ${config.maxRadiusKm} km`,
-    restPeriod: `You can donate whole blood every ${config.donationIntervalDays} days.`,
+    restPeriod: (sex: Sex) =>
+      `You can donate whole blood every ${config.donationIntervalDays[sex]} days.`,
+    sexLabel: "Sex",
+    sex: {
+      male: "Male",
+      female: "Female",
+    },
+  },
+
+  demo: {
+    banner: "Demo data: these are not real requests",
+    bannerDetail: "Hospital names are real. These hospitals are not involved with Lifeline.",
   },
 
   privacy: {

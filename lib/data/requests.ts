@@ -3,6 +3,7 @@ import { hospitals } from "@/lib/mock/hospitals";
 import { pledgeSeeds } from "@/lib/mock/pledges";
 import { requestSeeds, type BloodRequestSeed } from "@/lib/mock/requests";
 import { currentUser } from "@/lib/mock/user";
+import { shortName } from "@/lib/format";
 import type { BloodGroup, BloodRequest, BloodRequestRecord } from "@/lib/types";
 
 const MINUTE = 60 * 1000;
@@ -24,7 +25,7 @@ function toRecord(seed: BloodRequestSeed, now: Date): BloodRequestRecord {
     note: seed.note,
     patientName: seed.patientName,
     requesterId: seed.requesterId,
-    requesterName: seed.requesterName,
+    requesterName: shortName(seed.requesterName),
     status: seed.status,
     distanceKm: seed.distanceKm,
     contact: seed.contact,

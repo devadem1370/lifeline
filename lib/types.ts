@@ -1,6 +1,9 @@
 /** The eight red cell groups, written exactly as they are shown in the interface. */
 export type BloodGroup = "O-" | "O+" | "A-" | "A+" | "B-" | "B+" | "AB-" | "AB+";
 
+/** Donors record their sex because the wait between donations differs. */
+export type Sex = "male" | "female";
+
 /** The four colour families a blood group tag can take. */
 export type BloodGroupFamily = "O" | "A" | "B" | "AB";
 
@@ -25,7 +28,11 @@ export interface Hospital {
   name: string;
   area: string;
   city: string;
-  /** Hospitals the admins have checked. It earns a check mark, nothing more. */
+  /**
+   * Hospitals the admins have checked. It earns a check mark, nothing more.
+   * No real hospital is marked verified in mock data: none of them have
+   * anything to do with Lifeline.
+   */
   verified: boolean;
 }
 
@@ -47,6 +54,7 @@ export interface BloodRequestRecord {
   note: string | null;
   patientName: string | null;
   requesterId: string;
+  /** Shortened to a first name and an initial before it reaches a component. */
   requesterName: string;
   status: RequestStatus;
   distanceKm: number;
@@ -64,8 +72,10 @@ export type BloodRequest = Omit<BloodRequestRecord, "contact"> & {
 /** A donor as stored, including the phone number that stays hidden until a pledge. */
 export interface DonorRecord {
   id: string;
+  /** Their full name. Only the short form is shown before a pledge. */
   name: string;
   bloodGroup: BloodGroup;
+  sex: Sex;
   area: string;
   distanceKm: number;
   /** ISO 8601, or null if they have not recorded a donation. */
@@ -74,7 +84,10 @@ export interface DonorRecord {
   contact: Contact;
 }
 
-/** A donor as the interface sees them. `contact` is null until they have pledged. */
+/**
+ * A donor as the interface sees them. `name` is shortened to a first name and
+ * an initial, and `contact` is null until they have pledged.
+ */
 export type Donor = Omit<DonorRecord, "contact"> & {
   contact: Contact | null;
 };
@@ -104,6 +117,7 @@ export interface CurrentUser {
   id: string;
   name: string;
   bloodGroup: BloodGroup;
+  sex: Sex;
   phone: string;
   area: string;
   /** ISO 8601, or null if they have not recorded a donation. */

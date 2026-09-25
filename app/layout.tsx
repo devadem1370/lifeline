@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible_Next, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
+import { DemoBanner } from "@/components/ui/demo-banner";
 import { copy } from "@/lib/copy";
 
 const heading = Bricolage_Grotesque({
@@ -25,7 +26,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${heading.variable} ${body.variable} h-full bg-linen antialiased`}>
-      <body className="flex min-h-full flex-col bg-linen text-ink">{children}</body>
+      <body className="flex min-h-full flex-col bg-linen text-ink">
+        <DemoBanner />
+        {children}
+      </body>
     </html>
   );
 }

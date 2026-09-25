@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { BottomSheetDemo, SelectableTagsDemo, ToggleDemo } from "@/app/dev/components/demos";
 import { BloodGroupTag } from "@/components/ui/blood-group-tag";
+import { DemoBanner } from "@/components/ui/demo-banner";
 import { BottomNav } from "@/components/ui/bottom-nav";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { EmptyState } from "@/components/ui/empty-state";
@@ -180,11 +181,11 @@ export default async function ComponentsPage() {
         <Section title="List rows" note="Flat white bands, 1px mist hairlines, no cards.">
           <List>
             <ListRow title="Title only" />
-            <ListRow title="With meta" meta="City General Hospital · 2.4 km" />
+            <ListRow title="With meta" meta="Mayo Hospital · 2.4 km" />
             <ListRow
-              leading={<BloodGroupTag group="A+" size="sm" />}
+              leading={<BloodGroupTag group="B+" size="sm" />}
               title="With a tag and status"
-              meta="City General Hospital · 2.4 km"
+              meta="Mayo Hospital · 2.4 km"
               trailing={<span className="text-vein">{copy.status.pledged}</span>}
             />
             <ListRow
@@ -222,7 +223,7 @@ export default async function ComponentsPage() {
             <TextField
               id="demo-hospital"
               label={copy.form.hospitalLabel}
-              placeholder="Search for a hospital"
+              placeholder="Mayo Hospital, Lahore"
               required
             />
             <TextField
@@ -231,7 +232,7 @@ export default async function ComponentsPage() {
               hint={copy.form.phoneHint}
               type="tel"
               required
-              defaultValue="+880 1711 234567"
+              defaultValue="+92 300 0000101"
             />
             <TextField
               id="demo-patient"
@@ -266,6 +267,13 @@ export default async function ComponentsPage() {
           <div className="px-4">
             <BottomSheetDemo />
           </div>
+        </Section>
+
+        <Section
+          title="Demo notice"
+          note="Sits at the top of every page while the app runs on mock data."
+        >
+          <DemoBanner />
         </Section>
 
         <Section title="Empty state">
@@ -308,7 +316,10 @@ export default async function ComponentsPage() {
               />
             ))}
           </List>
-          <p className="px-4 pt-4 text-body-sm text-slate">{copy.privacy.beforePledge}</p>
+          <div className="flex flex-col gap-2 px-4 pt-4 text-body-sm text-slate">
+            <p>{copy.privacy.beforePledge}</p>
+            <p>{copy.donor.restPeriod(user.sex)}</p>
+          </div>
         </Section>
       </main>
       <BottomNav />

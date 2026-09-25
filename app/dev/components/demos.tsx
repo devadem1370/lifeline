@@ -80,7 +80,7 @@ export function BottomSheetDemo() {
             hint={copy.form.phoneHint}
             type="tel"
             required
-            placeholder="+880 1711 234567"
+            placeholder="+92 300 0000101"
           />
         </div>
       </BottomSheet>
