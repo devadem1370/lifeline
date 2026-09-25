@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { cn } from "@/lib/cn";
 import { copy } from "@/lib/copy";
+import { canvas, gutter } from "@/lib/layout";
 
 export function SiteHeader() {
   return (
     <header className="border-b border-mist bg-white">
-      <div className="mx-auto flex max-w-[560px] items-center justify-between gap-4 px-4 py-2">
+      <div className={cn(canvas, gutter, "flex items-center justify-between gap-4 py-2")}>
         <Link href="/" className="font-heading text-title text-ink">
           {copy.app.name}
         </Link>

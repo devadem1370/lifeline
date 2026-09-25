@@ -11,10 +11,12 @@ import { List, ListRow } from "@/components/ui/list";
 import { ProgressBar } from "@/components/ui/progress-bar";
 import { TextArea, TextField } from "@/components/ui/text-field";
 import { BLOOD_GROUPS } from "@/lib/blood";
+import { cn } from "@/lib/cn";
 import { copy } from "@/lib/copy";
 import { getCurrentUser } from "@/lib/data/donors";
 import { listRequestsForDonor } from "@/lib/data/requests";
 import { formatDeadline, formatDistance, isDeadlineSoon } from "@/lib/format";
+import { canvas } from "@/lib/layout";
 
 export const metadata: Metadata = {
   title: `Components · ${copy.app.name}`,
@@ -68,7 +70,7 @@ export default async function ComponentsPage() {
 
   return (
     <div className="flex min-h-full flex-col bg-linen">
-      <main className="mx-auto w-full max-w-[560px] flex-1 pb-10">
+      <main className={cn(canvas, "flex-1 pb-10")}>
         <header className="px-4 pt-8 pb-6">
           <h1 className="text-headline text-ink">Components</h1>
           <p className="pt-2 text-body text-slate">

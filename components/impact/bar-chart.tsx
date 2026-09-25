@@ -14,7 +14,7 @@ export function BarChart({ bars, caption }: { bars: Bar[]; caption: string }) {
   return (
     <figure className="flex flex-col gap-3">
       <figcaption className="sr-only">{caption}</figcaption>
-      <ul className="flex h-48 items-stretch gap-2">
+      <ul className="flex h-48 items-stretch gap-2 md:h-64 md:gap-4">
         {bars.map((bar) => (
           <li key={bar.label} className="flex flex-1 flex-col gap-1.5">
             <span className="text-center text-body-sm font-bold text-ink">{bar.value}</span>

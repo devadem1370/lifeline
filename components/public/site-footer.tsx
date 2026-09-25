@@ -1,10 +1,18 @@
 import Link from "next/link";
+import { cn } from "@/lib/cn";
 import { copy } from "@/lib/copy";
+import { canvas, gutter, measure } from "@/lib/layout";
 
 export function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-mist bg-white">
-      <nav className="mx-auto flex max-w-[560px] flex-col gap-4 px-4 py-6">
+      <nav
+        className={cn(
+          canvas,
+          gutter,
+          "flex flex-col gap-4 py-6 md:flex-row md:items-center md:justify-between md:gap-8",
+        )}
+      >
         <ul className="flex flex-wrap gap-x-6">
           <li>
             <Link
@@ -23,7 +31,9 @@ export function SiteFooter() {
             </Link>
           </li>
         </ul>
-        <p className="max-w-prose text-body-sm text-slate">{copy.footer.tagline}</p>
+        <p className={cn(measure, "text-body-sm text-slate md:text-right")}>
+          {copy.footer.tagline}
+        </p>
       </nav>
     </footer>
   );
